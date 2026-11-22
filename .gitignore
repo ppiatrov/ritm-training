@@ -1,0 +1,23 @@
+# Не коммитить пользовательские данные
+*.private.json
+ritm-private-*.json
+ritm-journal-*.csv
+*.zip
+.env
+.env.*
+.DS_Store
+
+# Приватные изображения, экспорт и тестовые артефакты
+*.heic
+*.heif
+*.jpeg
+*.jpg
+*.png
+/private/
+/data/
+/exports/
+/backups/
+check_app.py
+upgrade.py
+preview_*.png
+analytics_*.png

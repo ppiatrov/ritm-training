@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0d1518">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="РИТМ">
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' blob: data:; font-src 'self'; connect-src 'none'; object-src 'none'; frame-src 'none'; base-uri 'self'; form-action 'none'">
+  <meta name="description" content="Личный журнал тренировок и восстановления. Данные хранятся только в этом браузере.">
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Ритм — личные тренировки</title>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-symbol">R<span class="brand-dot">.</span></span><div><strong>РИТМ</strong><small>ЛИЧНЫЙ ТРЕКЕР</small></div></div>
+      <nav class="nav" aria-label="Разделы">
+        <button class="nav-link active" data-tab="today"><span>◉</span> Обзор</button>
+        <button class="nav-link" data-tab="calendar"><span>▦</span> Календарь</button>
+        <button class="nav-link" data-tab="workouts"><span>◇</span> Программа</button>
+        <button class="nav-link" data-tab="analytics"><span>▥</span> Аналитика</button>
+        <button class="nav-link" data-tab="garmin"><span>♡</span> Garmin</button>
+        <button class="nav-link" data-tab="settings"><span>⚙</span> Данные и настройки</button>
+      </nav>
+      <div class="side-note"><span class="privacy-icon">●</span> Локальное хранение<br><small>Нет сервера, аккаунтов и фоновой передачи данных</small></div>
+    </aside>
+    <div class="workspace">
+      <header class="topbar"><div class="crumb">ЛИЧНОЕ ПРОСТРАНСТВО <span>/</span> <span id="crumbName">Обзор</span></div><div class="top-right"><span class="lock-chip">◈ Приватно на этом устройстве</span><span id="todayHeader"></span></div></header>
+      <main class="main" id="main" aria-live="polite"></main>
+    </div>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+  <dialog id="imageDialog"><div class="dialog-head"><strong>Скриншот Garmin</strong><button type="button" id="closeImage" class="icon-button" aria-label="Закрыть">✕</button></div><img id="dialogImage" alt="Загруженный скриншот Garmin"><div id="dialogCaption" class="muted"></div></dialog>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
